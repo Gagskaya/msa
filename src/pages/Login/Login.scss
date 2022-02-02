@@ -1,16 +1,18 @@
 .login {
-    text-align: center;
+    text-align: left;
     &__title {
         margin-bottom: 45px;
     }
     &__inputs {
+        margin-bottom: 50px;
         display: flex;
         flex-direction: column;
         &-login {
             margin-bottom: 12px;
         }
-        &-password {
-            margin-bottom: 50px;
+        &-error {
+            color: red;
+            margin-top: 15px;
         }
     }
 }

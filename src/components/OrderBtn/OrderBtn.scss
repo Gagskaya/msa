@@ -7,6 +7,8 @@
     border-bottom: 1px solid #D6D6D6;
     width: 100%;
     font-size: 17px;
-    cursor: pointer;
     font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

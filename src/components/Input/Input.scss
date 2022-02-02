@@ -6,4 +6,7 @@
     padding: 17px;
     font-size: 18px;
     background: transparent;
+    &.error {
+        border-color: red;
+    }
 }
