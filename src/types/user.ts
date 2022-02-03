@@ -1,9 +1,10 @@
 export interface User {
-    id?: number
+    id: number
     login: string
     password: string
 }
 
-export interface Users {
-    items: User[]
+export interface UsersState {
+    items: null | User[]
+    item: null | User
 }

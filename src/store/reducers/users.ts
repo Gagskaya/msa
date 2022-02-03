@@ -1,13 +1,9 @@
-import { Action } from "redux"
-import { User } from "../../types/user"
+import { UsersState } from "../../types/user"
 import { UsersActions, UsersActionsTypes } from "../actionTypes/users";
 
-interface UsersState {
-    items: null | User[]
-}
-
 const initialState: UsersState = {
-    items: null
+    items: null,
+    item: null
 }
 
 export const users = (state = initialState, action: UsersActions) => {
@@ -16,6 +12,11 @@ export const users = (state = initialState, action: UsersActions) => {
             return {
                 ...state,
                 items: action.payload
+            }
+        case UsersActionsTypes.SET_LOGGED_IN_USER:
+            return {
+                ...state,
+                item: action.payload
             }
         default:
             return state;

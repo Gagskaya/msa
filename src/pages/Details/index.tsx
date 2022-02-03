@@ -11,6 +11,7 @@ import './Details.scss'
 import { memo } from "react";
 
 
+
 const Details = () => {
 
     return <div className="details">

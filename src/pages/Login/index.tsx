@@ -1,46 +1,55 @@
-import { memo, useState } from "react";
-import { toast } from 'react-toastify'
+import { memo, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
+
+import { fetchUsers, setLoggedInUser } from "../../store/actionCreators/users";
+import { selectUsers } from "../../store/selectors/users";
 
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { useNavigate } from 'react-router-dom';
 
-import 'react-toastify/dist/ReactToastify.css';
 import './Login.scss'
-import { User } from "../../types/user";
-
-interface LoginProps {
-  users: User[] | null
-}
 
 toast.configure();
 
-const Login: React.FC<LoginProps> = ({ users }) => {
+const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const users = useSelector(selectUsers);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
 
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
 
-  const navigate = useNavigate();
-
   const onSubmit = (e: any) => {
     e.preventDefault();
 
-    const isAuth = users?.find((user: User) => user.login === login && user.password === password);
+    const loggedInUser = users?.find((user) => user.login === login && user.password === password);
 
     if (!login || !password) {
       setError('error');
       return;
     }
-    if (isAuth) {
+
+    if (loggedInUser) {
       toast.success("Авторизация успешна", {
         position: toast.POSITION.TOP_CENTER,
       });
       setLogin('');
       setPassword('');
       setError(null);
-      navigate('/orders')
+      navigate('/orders');
+      localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+      dispatch(setLoggedInUser(loggedInUser));
     }
+
     else {
       toast.error("Неправильный логин или пароль", {
         position: toast.POSITION.TOP_CENTER,
@@ -52,7 +61,7 @@ const Login: React.FC<LoginProps> = ({ users }) => {
   }
 
   return <div className="login">
-    <h1 className="login__title" >Добро пожаловать!</h1>
+    <h1 className="login__title">Добро пожаловать!</h1>
     <form onSubmit={onSubmit} >
       <div className="login__inputs">
         <Input placeholder='Логин' className='login__inputs-login' value={login} onChange={setLogin} type='text' error={error} />
