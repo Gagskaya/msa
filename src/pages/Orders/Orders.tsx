@@ -1,7 +1,11 @@
-import { OrderCard } from '../../components/OrderCard'
+import { memo } from 'react';
+
+import { OrderCard } from '../../components/OrderCard';
+
 import './Orders.scss'
 
-export const Orders = () => {
+const Orders = () => {
+
     return <div className="orders">
         <div className="orders__title">
             <h2>Мои заказы</h2>
@@ -14,3 +18,4 @@ export const Orders = () => {
 
     </div>;
 };
+export default memo(Orders)

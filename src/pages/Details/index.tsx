@@ -8,9 +8,11 @@ import deliveryIcon from '../../assets/images/delivery-img.svg';
 import arrowIcon from '../../assets/images/arrow.svg';
 
 import './Details.scss'
+import { memo } from "react";
 
 
-export const Details = () => {
+const Details = () => {
+
     return <div className="details">
         <div className="details__btn">
             <button>Назад</button>
@@ -29,3 +31,5 @@ export const Details = () => {
         </div>
     </div>;
 };
+
+export default memo(Details)

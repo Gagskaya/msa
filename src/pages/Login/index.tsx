@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { toast } from 'react-toastify'
 
 import { Button } from "../../components/Button";
@@ -7,14 +7,15 @@ import { useNavigate } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.scss'
+import { User } from "../../types/user";
 
 interface LoginProps {
-  users: any
+  users: User[] | null
 }
 
 toast.configure();
 
-export const Login: React.FC<LoginProps> = ({ users }) => {
+const Login: React.FC<LoginProps> = ({ users }) => {
 
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -25,7 +26,7 @@ export const Login: React.FC<LoginProps> = ({ users }) => {
   const onSubmit = (e: any) => {
     e.preventDefault();
 
-    const isAuth = users.find((user: any) => user.login === login && user.password === password);
+    const isAuth = users?.find((user: User) => user.login === login && user.password === password);
 
     if (!login || !password) {
       setError('error');
@@ -66,3 +67,5 @@ export const Login: React.FC<LoginProps> = ({ users }) => {
 
   </div>;
 };
+
+export default memo(Login)
