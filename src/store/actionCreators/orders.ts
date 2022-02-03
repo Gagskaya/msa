@@ -11,7 +11,7 @@ export const setOrders = (payload: Order[]): SetOrdersAction => ({
 
 export const fetchOrders = () => (dispatch: Dispatch) => {
     const fetch = async () => {
-        const res = await axios.get<Order[]>('./data/orders.json');
+        const res = await axios.get<Order[]>('http://localhost:3001/orders');
         dispatch(setOrders(res.data));
     }
     fetch();

@@ -1,13 +1,18 @@
 import './OrderCardHeader.scss'
 import { Progress } from '../Progress';
+import { Order } from '../../types/order';
 
-export const OrderCardHeader = () => {
+interface OrderCardHeaderProps {
+    order: Order
+}
+
+export const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
     return <div className="order-card__header">
         <div className="order-card__header-title">
             <h2>6 дней</h2>
             <div>
-                <span>PRO рацион</span>
-                <h4>2000 кКал</h4>
+                <span>{order.packageName}</span>
+                <h4>{order.packageCalories}</h4>
             </div>
 
         </div>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 
 import { fetchUsers, setLoggedInUser } from "../../store/actionCreators/users";
-import { selectUsers } from "../../store/selectors/users";
+import { selectLoggedInUser, selectUsers } from "../../store/selectors/users";
 
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
-
+  // const loggedInUser = useSelector(selectLoggedInUser)
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
@@ -51,7 +51,7 @@ const Login = () => {
     }
 
     else {
-      toast.error("Неправильный логин или пароль", {
+      toast.error("Неправильный логин или пароль, повторите попытку", {
         position: toast.POSITION.TOP_CENTER,
       });
       setLogin('');
@@ -60,21 +60,21 @@ const Login = () => {
     }
   }
 
-  return <div className="login">
-    <h1 className="login__title">Добро пожаловать!</h1>
-    <form onSubmit={onSubmit} >
-      <div className="login__inputs">
-        <Input placeholder='Логин' className='login__inputs-login' value={login} onChange={setLogin} type='text' error={error} />
-        <Input placeholder='Пароль' className='login__inputs-password' value={password} onChange={setPassword} type="password" error={error} />
-        {error === 'error' && <p className="login__inputs-error">Оба поля должны быть заполнены</p>}
-
-      </div>
-      <div className="login__button">
-        <Button title='ВОЙТИ' type='submit' />
-      </div>
-    </form>
-
-  </div>;
+  return (
+    <div className="login">
+      <h1 className="login__title">Добро пожаловать!</h1>
+      <form onSubmit={onSubmit} >
+        <div className="login__inputs">
+          <Input placeholder='Логин' className='login__inputs-login' value={login} onChange={setLogin} type='text' error={error} />
+          <Input placeholder='Пароль' className='login__inputs-password' value={password} onChange={setPassword} type="password" error={error} />
+          {error === 'error' && <p className="login__inputs-error">Оба поля должны быть заполнены</p>}
+        </div>
+        <div className="login__button">
+          <Button title='ВОЙТИ' type='submit' />
+        </div>
+      </form>
+    </div>
+  )
 };
 
 export default memo(Login)

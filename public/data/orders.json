@@ -78,43 +78,43 @@
       ]
    },
    {
-      "id":2,
+      "id":4,
 	  "client_id": 2,
       "packageName":"NORMAL рацион",
       "packageCalories":"1300 кКал",
       "deliveries":[
          {
-            "id":4,
+            "id":1,
             "date":"2021-10-01",
             "interval":"8:00 - 10:00",
 			"address": "Стройка"
          },
          {
-            "id":5,
+            "id":2,
             "date":"2021-10-02",
             "interval":"8:00 - 10:00",
 			"address": "Стройка"
          },
          {
-            "id":6,
+            "id":3,
             "date":"2021-10-03",
             "interval":"8:00 - 10:00",
 			"address": "Дом"
          },
          {
-            "id":7,
+            "id":4,
             "date":"2021-10-04",
             "interval":"6:00 - 10:00",
 			"address": "Стройка"
          },
          {
-            "id":8,
+            "id":5,
             "date":"2021-11-02",
             "interval":"7:00 - 10:00",
 			"address": "Стройка"
          },
          {
-            "id":9,
+            "id":6,
             "date":"2021-11-03",
             "interval":"8:00 - 10:00",
 			"address": "Дом"
@@ -122,43 +122,43 @@
       ]
    },
    {
-      "id":2,
+      "id":5,
 	  "client_id": 1,
       "packageName":"NORMAL рацион",
       "packageCalories":"1300 кКал",
       "deliveries":[
          {
-            "id":4,
+            "id":1,
             "date":"2021-01-24",
             "interval":"8:00 - 10:00",
 			"address": "Дом"
          },
          {
-            "id":5,
+            "id":2,
             "date":"2021-01-28",
             "interval":"8:00 - 10:00",
 			"address": "Офис"
          },
          {
-            "id":6,
+            "id":3,
             "date":"2021-02-03",
             "interval":"8:00 - 10:00",
 			"address": "Дом"
          },
          {
-            "id":7,
+            "id":4,
             "date":"2021-02-05",
             "interval":"6:00 - 10:00",
 			"address": "улица Советская 54, корпус 5, подъезд 4, квартира 2"
          },
          {
-            "id":8,
+            "id":5,
             "date":"2021-02-07",
             "interval":"7:00 - 10:00",
 			"address": "Дом"
          },
          {
-            "id":9,
+            "id":6,
             "date":"2021-02-09",
             "interval":"8:00 - 10:00",
 			"address": "Дом"

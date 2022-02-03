@@ -1,3 +1,6 @@
+import { memo, useEffect } from "react";
+import { useNavigate, useParams } from 'react-router-dom'
+
 import { DeliveryCard } from "../../components/DeliveryCard";
 import { OrderBtn } from "../../components/OrderBtn";
 import { OrderCardHeader } from "../../components/OrderCardHeader";
@@ -8,29 +11,34 @@ import deliveryIcon from '../../assets/images/delivery-img.svg';
 import arrowIcon from '../../assets/images/arrow.svg';
 
 import './Details.scss'
-import { memo } from "react";
 
 
 
 const Details = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-    return <div className="details">
-        <div className="details__btn">
-            <button>Назад</button>
-        </div>
-        <div className="details__header">
-            <OrderCardHeader />
-        </div>
+    useEffect(() => {
 
-        <div className="details__delivery">
-            <h3>Доставки</h3>
-            <DeliveryCard deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />
+    }, [])
+    return (
+        <div className="details">
+            <div className="details__btn">
+                <button>Назад</button>
+            </div>
+            <div className="details__header">
+                {/* <OrderCardHeader /> */}
+            </div>
+            <div className="details__delivery">
+                <h3>Доставки</h3>
+                <DeliveryCard deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />
+            </div>
+            <div className="details__order-btns">
+                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} />
+                <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} />
+            </div>
         </div>
-        <div className="details__order-btns">
-            <OrderBtn title='Дублировать заказ' icon={orderAddBtn} />
-            <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} />
-        </div>
-    </div>;
+    )
 };
 
 export default memo(Details)

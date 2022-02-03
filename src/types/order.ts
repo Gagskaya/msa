@@ -1,6 +1,6 @@
 export interface Order {
     id: number
-    client_id: number
+    clientId: number
     packageName: string
     packageCalories: string
     deliveries: Delivery[]

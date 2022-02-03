@@ -1,6 +1,12 @@
+import { Order } from '../../types/order';
 import './OrderCardFooter.scss'
 
-export const OrderCardFooter = () => {
+
+interface OrderCardHeaderProps {
+    order: Order
+}
+
+export const OrderCardFooter: React.FC<OrderCardHeaderProps> = ({ order }) => {
     return <div className="order-card__footer">
         <div className="order-card__footer-date">
             <span>Окт</span>
