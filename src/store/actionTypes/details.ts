@@ -8,7 +8,7 @@ export enum DetailsActionsTypes {
 
 export interface SetDetailsAction extends Action<DetailsActionsTypes> {
     type: DetailsActionsTypes.SET_DETAILS,
-    payload: Order
+    payload: Order | null
 }
 
 export type DetailsActions = SetDetailsAction;

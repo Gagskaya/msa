@@ -3,7 +3,7 @@ import { Progress } from '../Progress';
 import { Order } from '../../types/order';
 
 interface OrderCardHeaderProps {
-    order: Order
+    order?: Order
 }
 
 export const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
@@ -11,8 +11,8 @@ export const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
         <div className="order-card__header-title">
             <h2>6 дней</h2>
             <div>
-                <span>{order.packageName}</span>
-                <h4>{order.packageCalories}</h4>
+                <span>{order?.packageName}</span>
+                <h4>{order?.packageCalories}</h4>
             </div>
 
         </div>

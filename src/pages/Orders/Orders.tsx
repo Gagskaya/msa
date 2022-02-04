@@ -28,7 +28,6 @@ const Orders = () => {
     };
 
     const showDetails = (order: Order) => {
-        dispatch(fetchOrders(user?.id, `&id=${order.id}`));
         navigate(`/orders/${order.id}`);
         dispatch(setDetails(order));
     };

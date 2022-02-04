@@ -18,7 +18,7 @@ function App() {
     if (loggedInUser) {
       const parsedLoggedInUser = JSON.parse(loggedInUser);
       dispatch(setLoggedInUser(parsedLoggedInUser));
-      navigate('/orders');
+      // navigate('/orders');
     }
     else {
       navigate('/')

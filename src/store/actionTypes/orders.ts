@@ -12,7 +12,7 @@ export interface FetchOrdersAction extends Action<OrdersActionsTypes> {
 
 export interface SetOrdersAction extends Action<OrdersActionsTypes> {
     type: OrdersActionsTypes.SET_ORDERS,
-    payload: Order[]
+    payload: Order[] | null
 }
 
 export type OrdersActions = FetchOrdersAction | SetOrdersAction;
