@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, SyntheticEvent, useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,7 +28,7 @@ const Login = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 
     const loggedInUser = users?.find((user) => user.login === login && user.password === password);

@@ -9,11 +9,10 @@ export const setOrders = (payload: Order[]): SetOrdersAction => ({
     payload
 });
 
-export const fetchOrders = () => (dispatch: Dispatch) => {
-    const fetch = async () => {
-        const res = await axios.get<Order[]>('http://localhost:3001/orders');
+export const fetchOrders = (id: number | undefined, orderId: string = '') => (dispatch: Dispatch) => {
+    (async function () {
+        const res = await axios.get<Order[]>(`http://localhost:3001/orders?clientId=${id}${orderId}`);
         dispatch(setOrders(res.data));
-    }
-    fetch();
+    }())
 }
 

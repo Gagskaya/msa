@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { Order } from '../../types/order';
 import { OrderCardFooter } from '../OrderCardFooter';
 import { OrderCardHeader } from '../OrderCardHeader';
@@ -9,9 +8,9 @@ interface OrderCardProps {
 }
 
 export const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
-    const navigate = useNavigate();
-    return <div className='order-card' onClick={() => navigate(`/orders/${order.id}`)}>
+
+    return <>
         <OrderCardHeader order={order} />
         <OrderCardFooter order={order} />
-    </div>;
+    </>;
 };

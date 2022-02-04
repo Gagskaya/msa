@@ -5,11 +5,10 @@ import { User } from "../../types/user";
 import { UsersActions, UsersActionsTypes } from "../actionTypes/users";
 
 export const fetchUsers = () => (dispatch: Dispatch) => {
-    const fetch = async () => {
+    (async function () {
         const res = await axios.get<User[]>('http://localhost:3001/users');
         dispatch(setUsers(res.data));
-    }
-    fetch();
+    }())
 };
 
 export const setUsers = (payload: User[]): UsersActions => ({

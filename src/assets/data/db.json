@@ -5,6 +5,7 @@
         "clientId": 1,
          "packageName":"ULTRA рацион",
          "packageCalories":"9999 кКал",
+         "orderId" : 1,
          "deliveries":[
             {
                "id":1,
@@ -30,6 +31,7 @@
          "id":2,
         "clientId": 2,
          "packageName":"ULTRA рацион",
+         "orderId" : 2,
          "packageCalories":"8888 кКал",
          "deliveries":[
             {
@@ -55,6 +57,7 @@
       {
          "id":3,
         "clientId": 1,
+        "orderId" : 3,
          "packageName":"ULTRA рацион",
          "packageCalories":"7777 кКал",
          "deliveries":[
@@ -81,6 +84,7 @@
       {
          "id":4,
         "clientId": 2,
+        "orderId" : 4,
          "packageName":"NORMAL рацион",
          "packageCalories":"1300 кКал",
          "deliveries":[
@@ -125,6 +129,7 @@
       {
          "id":5,
         "clientId": 1,
+        "orderId" : 5,
          "packageName":"NORMAL рацион",
          "packageCalories":"1300 кКал",
          "deliveries":[

@@ -20,11 +20,15 @@ const Details = () => {
 
     useEffect(() => {
 
-    }, [])
+    }, []);
+
+    const moveBack = () => {
+        navigate('/orders')
+    }
     return (
         <div className="details">
             <div className="details__btn">
-                <button>Назад</button>
+                <button onClick={moveBack}>Назад</button>
             </div>
             <div className="details__header">
                 {/* <OrderCardHeader /> */}

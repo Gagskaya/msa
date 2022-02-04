@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from '../../components/OrderCard';
 import { fetchOrders } from '../../store/actionCreators/orders';
-import { selectFilteredOrders } from '../../store/selectors/orders';
-import { selectUsers } from '../../store/selectors/users';
+import { selectOrders } from '../../store/selectors/orders';
+import { selectLoggedInUser } from '../../store/selectors/users';
 import { Order } from '../../types/order';
 
 import './Orders.scss';
@@ -14,17 +14,21 @@ const Orders = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const orders = useSelector(selectFilteredOrders);
-    const user = useSelector(selectUsers);
-    console.log(user);
-    useEffect(() => {
-        dispatch(fetchOrders());
+    const orders = useSelector(selectOrders);
+    const user = useSelector(selectLoggedInUser);
 
-    }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchOrders(user?.id));
+    }, [dispatch, user]);
 
     const signOut = () => {
         localStorage.removeItem('loggedInUser');
         navigate('/');
+    };
+
+    const onClick = (orderId: number) => {
+        dispatch(fetchOrders(user?.id, `&id=${orderId}`));
+        navigate(`/orders/${orderId}`)
     }
     return (
         <div className="orders">
@@ -34,10 +38,12 @@ const Orders = () => {
                 <span>{orders?.length}</span>
             </div>
             <div className="orders__cards">
-                {orders?.map((order: Order) => <OrderCard key={order.id} order={order} />)}
+                {orders?.map((order: Order) => <div className="order-card" key={order.id} onClick={() => onClick(order.id)}>
+                    <OrderCard order={order} />
+                </div>)}
             </div>
         </div>
     )
 };
 
-export default memo(Orders)
+export default memo(Orders);
