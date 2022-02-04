@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from '../../components/OrderCard';
+import { setDetails } from '../../store/actionCreators/details';
 import { fetchOrders } from '../../store/actionCreators/orders';
 import { selectOrders } from '../../store/selectors/orders';
 import { selectLoggedInUser } from '../../store/selectors/users';
@@ -26,10 +27,12 @@ const Orders = () => {
         navigate('/');
     };
 
-    const onClick = (orderId: number) => {
-        dispatch(fetchOrders(user?.id, `&id=${orderId}`));
-        navigate(`/orders/${orderId}`)
-    }
+    const showDetails = (order: Order) => {
+        dispatch(fetchOrders(user?.id, `&id=${order.id}`));
+        navigate(`/orders/${order.id}`);
+        dispatch(setDetails(order));
+    };
+
     return (
         <div className="orders">
             <button className='sign-out' onClick={signOut}>Выйти</button>
@@ -38,7 +41,7 @@ const Orders = () => {
                 <span>{orders?.length}</span>
             </div>
             <div className="orders__cards">
-                {orders?.map((order: Order) => <div className="order-card" key={order.id} onClick={() => onClick(order.id)}>
+                {orders?.map((order: Order) => <div className="order-card" key={order.id} onClick={() => showDetails(order)}>
                     <OrderCard order={order} />
                 </div>)}
             </div>

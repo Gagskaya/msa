@@ -11,19 +11,18 @@ import deliveryIcon from '../../assets/images/delivery-img.svg';
 import arrowIcon from '../../assets/images/arrow.svg';
 
 import './Details.scss'
+import { selectDetails } from "../../store/selectors/details";
+import { useSelector } from "react-redux";
 
 
 
 const Details = () => {
-    const { id } = useParams();
     const navigate = useNavigate();
-
-    useEffect(() => {
-
-    }, []);
+    const details = useSelector(selectDetails);
+    console.log(details);
 
     const moveBack = () => {
-        navigate('/orders')
+        navigate('/orders');
     }
     return (
         <div className="details">
@@ -35,7 +34,7 @@ const Details = () => {
             </div>
             <div className="details__delivery">
                 <h3>Доставки</h3>
-                <DeliveryCard deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />
+                <DeliveryCard deliveryImage={deliveryIcon} arrowIcon={arrowIcon} deliveries={details?.deliveries} />
             </div>
             <div className="details__order-btns">
                 <OrderBtn title='Дублировать заказ' icon={orderAddBtn} />
