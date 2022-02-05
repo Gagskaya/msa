@@ -1,27 +1,35 @@
-import { Order } from '../../types/order';
-import './OrderCardFooter.scss'
+import { Delivery, Order } from '../../types/order';
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 
+import './OrderCardFooter.scss';
 
-interface OrderCardHeaderProps {
-    order: Order
+interface OrderCardFooterProps {
+    sortedDelivery: Delivery
 }
 
-export const OrderCardFooter: React.FC<OrderCardHeaderProps> = ({ order }) => {
-    return <div className="order-card__footer">
-        <div className="order-card__footer-date">
-            <span>Окт</span>
-            <span>28</span>
-        </div>
-        <div className="order-card__footer-info">
-            <h5>
-                Ближайшая доставка
-                <span>в понедельник –</span>
-            </h5>
-            <div>
-                <p>с 10:00 до 12:00</p>
-                <p>Работа на объекте в Басма...</p>
-            </div>
+export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ sortedDelivery }) => {
+    const month = format(new Date(sortedDelivery.date), 'LLL', { locale: ru });
+    const day = format(new Date(sortedDelivery.date), 'd', { locale: ru });
+    const dayOfWeek = format(new Date(sortedDelivery.date), 'eeee', { locale: ru });
 
+    return (
+        <div className="order-card__footer">
+            <div className="order-card__footer-date">
+                <span>{month}</span>
+                <span>{day}</span>
+            </div>
+            <div className="order-card__footer-info">
+                <h5>
+                    Ближайшая доставка
+                    <span>в {dayOfWeek} –</span>
+                </h5>
+                <div>
+                    <p>{sortedDelivery.interval}</p>
+                    <p>{`Работа на объекте ${sortedDelivery.address}`}</p>
+                </div>
+
+            </div>
         </div>
-    </div>
+    );
 };

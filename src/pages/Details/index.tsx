@@ -14,30 +14,37 @@ import './Details.scss'
 import { selectDetails } from "../../store/selectors/details";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../../store/selectors/users";
-import { fetchOrders } from "../../store/actionCreators/orders";
-import { setDetails } from "../../store/actionCreators/details";
+import { duplicateOrder, fetchOrders } from "../../store/actionCreators/orders";
+import { Order } from "../../types/order";
 
 
 
 const Details = () => {
-    const navigate = useNavigate();
     const { id } = useParams();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const details = useSelector(selectDetails);
     const user = useSelector(selectLoggedInUser);
     console.log(details);
-
     const moveBack = () => {
         navigate('/orders');
+    }
+    const onduplicateOrder = (order: Order | null) => {
+        if (order) {
+            const newOrder = { ...order, id: 10 };
+            dispatch(duplicateOrder(newOrder));
+
+        }
     }
 
     useEffect(() => {
         dispatch(fetchOrders(user?.id, `&id=${id}`));
-    }, [dispatch, user])
+    }, [dispatch, user]);
+
     return (
         <div className="details">
             <div className="details__btn">
-                <button onClick={moveBack}>Назад</button>
+                <button onClick={() => onduplicateOrder(details)}>Назад</button>
             </div>
             <div className="details__header">
                 <OrderCardHeader />

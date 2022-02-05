@@ -3,7 +3,8 @@ import { Order } from "../../types/order";
 
 export enum OrdersActionsTypes {
     FETCH_ORDERS = 'FETCH_ORDERS',
-    SET_ORDERS = 'SET_ORDERS'
+    SET_ORDERS = 'SET_ORDERS',
+    DUPLICATE_ORDER = 'DUPLICATE_ORDER'
 }
 
 export interface FetchOrdersAction extends Action<OrdersActionsTypes> {
@@ -15,4 +16,9 @@ export interface SetOrdersAction extends Action<OrdersActionsTypes> {
     payload: Order[] | null
 }
 
-export type OrdersActions = FetchOrdersAction | SetOrdersAction;
+export interface DuplicateOrderAction extends Action<OrdersActionsTypes> {
+    type: OrdersActionsTypes.DUPLICATE_ORDER,
+    payload: Order
+}
+
+export type OrdersActions = FetchOrdersAction | SetOrdersAction | DuplicateOrderAction;

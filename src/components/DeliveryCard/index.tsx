@@ -18,7 +18,6 @@ export const DeliveryCard: React.FC<DeliveryCardProps> = ({ deliveryImage, arrow
             <div className="delivery-card-date">
                 <img src={deliveryImage} alt="delivery-image" />
                 <p>{date}</p>
-
             </div>
             <div className="delivery-card-time">
                 <p>{delivery.interval}</p>
