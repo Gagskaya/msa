@@ -10,7 +10,7 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { useNavigate } from 'react-router-dom';
 
-import './Login.scss'
+import './Login.scss';
 
 toast.configure();
 
@@ -77,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default memo(Login)
+export default memo(Login);

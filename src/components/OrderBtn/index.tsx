@@ -1,4 +1,4 @@
-import './OrderBtn.scss'
+import './OrderBtn.scss';
 
 interface OrderBtnProps {
     title: string;

@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
 
 import { Delivery } from '../../types/order';
@@ -8,8 +8,8 @@ import './DeliveryCard.scss';
 interface DeliveryCardProps {
     deliveryImage: string;
     arrowIcon: string;
-    delivery: Delivery
-}
+    delivery: Delivery;
+};
 
 export const DeliveryCard: React.FC<DeliveryCardProps> = ({ deliveryImage, arrowIcon, delivery }) => {
     const date = format(new Date(delivery.date), 'd LLLL, eeee', { locale: ru });
@@ -27,5 +27,5 @@ export const DeliveryCard: React.FC<DeliveryCardProps> = ({ deliveryImage, arrow
                 <img src={arrowIcon} alt="arrow" />
             </div>
         </div>
-    )
+    );
 };

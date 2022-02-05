@@ -3,7 +3,7 @@ import { OrdersState } from "./order";
 import { OrderDetailsState } from "./orderDetails";
 
 export interface RootState {
-    users: UsersState
-    orders: OrdersState
-    orderDetails: OrderDetailsState
-}
+    users: UsersState;
+    orders: OrdersState;
+    orderDetails: OrderDetailsState;
+};

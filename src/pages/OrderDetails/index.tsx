@@ -1,14 +1,15 @@
 import { memo, useEffect } from "react";
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 
 import { DeliveryCard } from "../../components/DeliveryCard";
 import { OrderBtn } from "../../components/OrderBtn";
 import OrderCardHeader from "../../components/OrderCardHeader";
 
 import { selectOrderDetails } from "../../store/selectors/orderDetails";
-import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/selectors/users";
-import { duplicateOrder, fetchOrders } from "../../store/actionCreators/orders";
+import { duplicateOrder, fetchDuplicateOrder } from "../../store/actionCreators/orders";
+import { fetchOrderDetails } from "../../store/actionCreators/orderDetails";
 import { Order } from "../../types/order";
 
 import orderAddBtn from '../../assets/images/order-add-btn.svg';
@@ -31,18 +32,24 @@ const OrderDetails = () => {
         navigate('/orders');
     };
 
-    const onDuplicateOrder = (order: Order | null) => {
-        if (order) {
-            const newOrder = { ...order, id: Math.random() };
-            dispatch(duplicateOrder(newOrder));
-            navigate(`/orders/${newOrder.id}`)
-        };
-
+    const onDuplicateOrder = (order: Order) => {
+        const newOrder = { ...order, id: Math.random() };
+        dispatch(fetchDuplicateOrder(newOrder));
+        navigate(`/orders/${newOrder.id}`)
     };
 
+    // const omRemoveOrder = (order: Order | null) => {
+    //     if (order) {
+    //         dispatch(removeOrder(order));
+    //         navigate(`/orders/${newOrder.id}`);
+    //     };
+    // };
+
     useEffect(() => {
-        dispatch(fetchOrders(user?.id, `&id=${id}`));
-    }, [dispatch, user]);
+        if (user) {
+            dispatch(fetchOrderDetails(user.id, `&id=${id}`));
+        }
+    }, [dispatch, user, id]);
 
     return (
         <div className="order-details">
@@ -54,7 +61,7 @@ const OrderDetails = () => {
             </div>
             <div className="order-details__delivery">
                 <h3>Доставки</h3>
-                {orderDetails?.deliveries.map((delivery) =>
+                {orderDetails?.deliveries?.map((delivery) =>
                     <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
             </div>
             <div className="order-details__order-btns">
@@ -65,4 +72,4 @@ const OrderDetails = () => {
     );
 };
 
-export default memo(OrderDetails)
+export default memo(OrderDetails);

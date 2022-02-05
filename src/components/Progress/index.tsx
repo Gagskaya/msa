@@ -1,4 +1,4 @@
-import './Progress.scss'
+import './Progress.scss';
 
 export const Progress = () => {
     return (

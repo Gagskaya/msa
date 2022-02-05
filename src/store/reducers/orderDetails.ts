@@ -1,9 +1,10 @@
-import { OrderDetailsState } from "../../types/orderDetails"
+import { Order } from "../../types/order";
+import { OrderDetailsState } from "../../types/orderDetails";
 import { OrderDetailsActions, OrderDetailsActionsTypes } from "../actionTypes/orderDetails";
 
 const initialState: OrderDetailsState = {
-    item: null
-}
+    item: {} as Order
+};
 
 export const orderDetails = (state = initialState, action: OrderDetailsActions) => {
     switch (action.type) {
@@ -14,5 +15,5 @@ export const orderDetails = (state = initialState, action: OrderDetailsActions) 
             }
         default:
             return state;
-    }
-}
+    };
+};

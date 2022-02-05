@@ -5,7 +5,6 @@
       "clientId": 1,
       "packageName": "ULTRA рацион",
       "packageCalories": "9999 кКал",
-      "orderId": 1,
       "deliveries": [
         {
           "id": 1,
@@ -21,7 +20,7 @@
         },
         {
           "id": 3,
-          "date": "2021-02-03",
+          "date": "2021-10-03",
           "interval": "8:00 - 10:00",
           "address": "Дом"
         }
@@ -31,7 +30,6 @@
       "id": 2,
       "clientId": 2,
       "packageName": "ULTRA рацион",
-      "orderId": 2,
       "packageCalories": "8888 кКал",
       "deliveries": [
         {
@@ -48,135 +46,69 @@
         },
         {
           "id": 3,
-          "date": "2021-03-01",
+          "date": "2021-05-01",
           "interval": "8:00 - 10:00",
           "address": "Стройка"
         }
       ]
     },
     {
-      "id": 3,
+      "id": 0.3514652578087478,
       "clientId": 1,
-      "orderId": 3,
       "packageName": "ULTRA рацион",
-      "packageCalories": "7777 кКал",
+      "packageCalories": "9999 кКал",
       "deliveries": [
         {
           "id": 1,
-          "date": "2020-12-01",
+          "date": "2021-02-01",
           "interval": "8:00 - 10:00",
           "address": "Дом"
         },
         {
           "id": 2,
-          "date": "2020-12-06",
+          "date": "2021-02-02",
           "interval": "8:00 - 10:00",
           "address": "Дом"
         },
         {
           "id": 3,
-          "date": "2020-12-10",
+          "date": "2021-02-03",
           "interval": "8:00 - 10:00",
           "address": "Дом"
         }
       ]
     },
     {
-      "id": 4,
-      "clientId": 2,
-      "orderId": 4,
-      "packageName": "NORMAL рацион",
-      "packageCalories": "1300 кКал",
+      "id": 0.884435114943964,
+      "clientId": 1,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "9999 кКал",
       "deliveries": [
         {
           "id": 1,
-          "date": "2021-10-01",
+          "date": "2021-02-01",
           "interval": "8:00 - 10:00",
-          "address": "Стройка"
+          "address": "Дом"
         },
         {
           "id": 2,
-          "date": "2021-10-02",
+          "date": "2021-02-02",
           "interval": "8:00 - 10:00",
-          "address": "Стройка"
+          "address": "Дом"
         },
         {
           "id": 3,
           "date": "2021-10-03",
           "interval": "8:00 - 10:00",
           "address": "Дом"
-        },
-        {
-          "id": 4,
-          "date": "2021-10-04",
-          "interval": "6:00 - 10:00",
-          "address": "Стройка"
-        },
-        {
-          "id": 5,
-          "date": "2021-11-02",
-          "interval": "7:00 - 10:00",
-          "address": "Стройка"
-        },
-        {
-          "id": 6,
-          "date": "2021-11-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
         }
       ]
     },
     {
-      "id": 5,
-      "clientId": 1,
-      "orderId": 5,
-      "packageName": "NORMAL рацион",
-      "packageCalories": "1300 кКал",
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2021-01-24",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 2,
-          "date": "2021-01-28",
-          "interval": "8:00 - 10:00",
-          "address": "Офис"
-        },
-        {
-          "id": 3,
-          "date": "2021-02-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 4,
-          "date": "2021-02-05",
-          "interval": "6:00 - 10:00",
-          "address": "улица Советская 54, корпус 5, подъезд 4, квартира 2"
-        },
-        {
-          "id": 5,
-          "date": "2021-02-07",
-          "interval": "7:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 6,
-          "date": "2021-02-09",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        }
-      ]
-    },
-    {
-      "id": 0.6729165477630796,
+      "id": 0.6520234138819314,
       "clientId": 1,
       "packageName": "ULTRA рацион",
       "packageCalories": "9999 кКал",
-      "orderId": 1,
       "deliveries": [
         {
           "id": 1,
@@ -192,115 +124,7 @@
         },
         {
           "id": 3,
-          "date": "2021-02-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        }
-      ]
-    },
-    {
-      "id": 0.9012272519622495,
-      "clientId": 1,
-      "packageName": "ULTRA рацион",
-      "packageCalories": "9999 кКал",
-      "orderId": 1,
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2021-02-01",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 2,
-          "date": "2021-02-02",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 3,
-          "date": "2021-02-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        }
-      ]
-    },
-    {
-      "id": 0.25878464048275407,
-      "clientId": 2,
-      "packageName": "ULTRA рацион",
-      "orderId": 2,
-      "packageCalories": "8888 кКал",
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2020-12-31",
-          "interval": "8:00 - 10:00",
-          "address": "Стройка"
-        },
-        {
-          "id": 2,
-          "date": "2021-01-10",
-          "interval": "8:00 - 10:00",
-          "address": "Стройка"
-        },
-        {
-          "id": 3,
-          "date": "2021-03-01",
-          "interval": "8:00 - 10:00",
-          "address": "Стройка"
-        }
-      ]
-    },
-    {
-      "id": 0.6651059578594256,
-      "clientId": 1,
-      "packageName": "ULTRA рацион",
-      "packageCalories": "9999 кКал",
-      "orderId": 1,
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2021-02-01",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 2,
-          "date": "2021-02-02",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 3,
-          "date": "2021-02-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        }
-      ]
-    },
-    {
-      "id": 0.5990012132921438,
-      "clientId": 1,
-      "orderId": 3,
-      "packageName": "ULTRA рацион",
-      "packageCalories": "7777 кКал",
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2020-12-01",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 2,
-          "date": "2020-12-06",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 3,
-          "date": "2020-12-10",
+          "date": "2021-10-03",
           "interval": "8:00 - 10:00",
           "address": "Дом"
         }

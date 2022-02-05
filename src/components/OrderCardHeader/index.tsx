@@ -7,7 +7,7 @@ import './OrderCardHeader.scss';
 
 interface OrderCardHeaderProps {
     order?: Order
-}
+};
 
 const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
 

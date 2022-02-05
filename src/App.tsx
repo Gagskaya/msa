@@ -35,7 +35,7 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default memo(App);
 

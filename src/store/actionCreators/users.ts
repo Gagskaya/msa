@@ -8,7 +8,7 @@ export const fetchUsers = () => (dispatch: Dispatch) => {
     (async function () {
         const res = await axios.get<User[]>('http://localhost:3001/users');
         dispatch(setUsers(res.data));
-    }())
+    }());
 };
 
 export const setUsers = (payload: User[]): UsersActions => ({

@@ -17,7 +17,7 @@ const Orders = () => {
 
     const orders = useSelector(selectOrders);
     const user = useSelector(selectUser);
-    console.log(orders);
+
     const onSignOut = () => {
         localStorage.removeItem('loggedInUser');
         navigate('/');
@@ -29,7 +29,9 @@ const Orders = () => {
     };
 
     useEffect(() => {
-        dispatch(fetchOrders(user?.id));
+        if (user) {
+            dispatch(fetchOrders(user.id));
+        }
     }, [dispatch, user]);
 
     return (

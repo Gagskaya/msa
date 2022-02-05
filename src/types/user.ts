@@ -1,10 +1,10 @@
 export interface User {
-    id: number
-    login: string
-    password: string
-}
+    id: number;
+    login: string;
+    password: string;
+};
 
 export interface UsersState {
-    items: User[]
-    item: null | User
+    items: User[];
+    item: User;
 }

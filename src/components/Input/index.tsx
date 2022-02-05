@@ -1,13 +1,14 @@
-import './Input.scss'
-import classNames from 'classnames'
+import classNames from 'classnames';
+
+import './Input.scss';
 
 interface InputProps {
-    placeholder: string
-    className: string
-    value: string
-    onChange: any
-    type: string
-    error: string | null
+    placeholder: string;
+    className: string;
+    value: string;
+    onChange: (e: any) => void;
+    type: string;
+    error: string | null;
 }
 
 export const Input: React.FC<InputProps> = ({ placeholder, className, value, onChange, type, error }) => {

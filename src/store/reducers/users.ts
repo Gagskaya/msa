@@ -1,10 +1,10 @@
-import { UsersState } from "../../types/user"
+import { User, UsersState } from "../../types/user";
 import { UsersActions, UsersActionsTypes } from "../actionTypes/users";
 
 const initialState: UsersState = {
     items: [],
-    item: null
-}
+    item: {} as User
+};
 
 export const users = (state = initialState, action: UsersActions) => {
     switch (action.type) {
@@ -20,5 +20,5 @@ export const users = (state = initialState, action: UsersActions) => {
             }
         default:
             return state;
-    }
-}
+    };
+};

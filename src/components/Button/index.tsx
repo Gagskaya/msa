@@ -1,8 +1,8 @@
-import './Button.scss'
+import './Button.scss';
 
 interface ButtonProps {
-    title: string
-    type: any
+    title: string;
+    type: any;
 }
 
 export const Button: React.FC<ButtonProps> = ({ title, type }) => {
