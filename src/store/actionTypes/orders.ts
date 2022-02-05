@@ -2,9 +2,9 @@ import { Action } from "redux";
 import { Order } from "../../types/order";
 
 export enum OrdersActionsTypes {
-    FETCH_ORDERS = 'FETCH_ORDERS',
-    SET_ORDERS = 'SET_ORDERS',
-    DUPLICATE_ORDER = 'DUPLICATE_ORDER'
+    FETCH_ORDERS = '/orders/FETCH_ORDERS',
+    SET_ORDERS = 'orders/SET_ORDERS',
+    DUPLICATE_ORDER = 'orders/DUPLICATE_ORDER'
 }
 
 export interface FetchOrdersAction extends Action<OrdersActionsTypes> {

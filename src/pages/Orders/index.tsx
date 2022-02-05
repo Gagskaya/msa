@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from '../../components/OrderCard';
-import { setDetails } from '../../store/actionCreators/details';
+import { setOrderDetails } from '../../store/actionCreators/orderDetails';
 import { fetchOrders } from '../../store/actionCreators/orders';
 import { selectOrders } from '../../store/selectors/orders';
 import { selectUser } from '../../store/selectors/users';
@@ -22,27 +22,26 @@ const Orders = () => {
         dispatch(fetchOrders(user?.id));
     }, [dispatch, user]);
 
-    const signOut = () => {
+    const onSignOut = () => {
         localStorage.removeItem('loggedInUser');
         navigate('/');
     };
 
-    const showDetails = (order: Order) => {
+    const onShowDetails = (order: Order) => {
         navigate(`/orders/${order.id}`);
-        dispatch(setDetails(order));
+        dispatch(setOrderDetails(order));
     };
 
     return (
         <div className="orders">
-            <button className='sign-out' onClick={signOut}>Выйти</button>
+            <button className='sign-out' onClick={onSignOut}>Выйти</button>
             <div className="orders__title">
                 <h2>Мои заказы</h2>
                 <span>{orders?.length}</span>
             </div>
             <div className="orders__cards">
-                {orders?.map((order: Order) => <div className="order-card" key={order.id} onClick={() => showDetails(order)}>
-                    <OrderCard order={order} />
-                </div>)}
+                {orders?.map((order: Order) =>
+                    <OrderCard order={order} key={order.id} onShowDetails={onShowDetails} />)}
             </div>
         </div>
     )

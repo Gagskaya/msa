@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 
 import { setUser } from './store/actionCreators/users';
 
-import Details from './pages/Details';
+import OrderDetails from './pages/OrderDetails';
 import Login from './pages/Login';
-import Orders from './pages/Orders/Orders';
+import Orders from './pages/Orders';
 
 import './App.scss';
 
@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='orders' element={<Orders />} />
-        <Route path='orders/:id' element={<Details />} />
+        <Route path='orders/:id' element={<OrderDetails />} />
       </Routes>
     </div>
   );

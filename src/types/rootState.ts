@@ -1,4 +1,4 @@
-import { DetailsState } from "./details";
+import { OrderDetailsState } from "./orderDetails";
 import { OrdersState } from "./order";
 import { UsersState } from "./user";
 
@@ -6,5 +6,5 @@ import { UsersState } from "./user";
 export interface RootState {
     users: UsersState
     orders: OrdersState
-    details: DetailsState
+    orderDetails: OrderDetailsState
 }

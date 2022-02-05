@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { DeliveryCard } from "../../components/DeliveryCard";
 import { OrderBtn } from "../../components/OrderBtn";
-import { OrderCardHeader } from "../../components/OrderCardHeader";
+import OrderCardHeader from "../../components/OrderCardHeader";
 
-import { selectDetails } from "../../store/selectors/details";
+import { selectOrderDetails } from "../../store/selectors/orderDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/selectors/users";
 import { duplicateOrder, fetchOrders } from "../../store/actionCreators/orders";
@@ -16,18 +16,22 @@ import orderDeleteBtn from '../../assets/images/order-delete-btn.svg';
 import deliveryIcon from '../../assets/images/delivery-img.svg';
 import arrowIcon from '../../assets/images/arrow.svg';
 
+import './OrderDetails.scss';
 
-import './Details.scss';
 
-
-const Details = () => {
+const OrderDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const details = useSelector(selectDetails);
+
+    const orderDetails = useSelector(selectOrderDetails);
     const user = useSelector(selectUser);
 
-    const moveBack = () => {
+    useEffect(() => {
+        dispatch(fetchOrders(user?.id, `&id=${id}`));
+    }, [dispatch, user]);
+
+    const onMoveBack = () => {
         navigate('/orders');
     };
 
@@ -37,30 +41,26 @@ const Details = () => {
             dispatch(duplicateOrder(newOrder));
         }
     };
-
-    useEffect(() => {
-        dispatch(fetchOrders(user?.id, `&id=${id}`));
-    }, [dispatch, user]);
-
     return (
-        <div className="details">
-            <div className="details__btn">
-                <button onClick={moveBack}>Назад</button>
+        <div className="order-details">
+            <div className="order-details__btn">
+                <button onClick={onMoveBack}>Назад</button>
             </div>
-            <div className="details__header">
+            <div className="order-details__header">
                 <OrderCardHeader />
             </div>
-            <div className="details__delivery">
+            <div className="order-details__delivery">
                 <h3>Доставки</h3>
-                {details?.deliveries.map((delivery) => <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
+                {orderDetails?.deliveries.map((delivery) =>
+                    <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
 
             </div>
-            <div className="details__order-btns">
-                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(details)} />
+            <div className="order-details__order-btns">
+                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(orderDetails)} />
                 <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} />
             </div>
         </div>
     )
 };
 
-export default memo(Details)
+export default memo(OrderDetails)

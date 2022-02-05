@@ -1,5 +1,5 @@
 import { Order } from "./order";
 
-export interface DetailsState {
+export interface OrderDetailsState {
     item: Order | null
 }

@@ -2,9 +2,9 @@ import { Action } from "redux";
 import { User } from "../../types/user";
 
 export enum UsersActionsTypes {
-    FETCH_USERS = 'FETCH_USERS',
-    SET_USERS = 'SET_USERS',
-    SET_LOGGED_IN_USER = 'SET_LOGGED_IN_USER'
+    FETCH_USERS = 'users/FETCH_USERS',
+    SET_USERS = 'users/SET_USERS',
+    SET_LOGGED_IN_USER = 'users/SET_LOGGED_IN_USER'
 }
 
 export interface SetLoggedInUserAction extends Action<UsersActionsTypes> {

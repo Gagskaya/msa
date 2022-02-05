@@ -5,13 +5,14 @@ import { ru } from 'date-fns/locale';
 import './OrderCardFooter.scss';
 
 interface OrderCardFooterProps {
-    sortedDelivery: Delivery
+    closestDelivery: Delivery
 }
 
-export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ sortedDelivery }) => {
-    const month = format(new Date(sortedDelivery.date), 'LLL', { locale: ru });
-    const day = format(new Date(sortedDelivery.date), 'd', { locale: ru });
-    const dayOfWeek = format(new Date(sortedDelivery.date), 'eeee', { locale: ru });
+export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ closestDelivery }) => {
+
+    const month = format(new Date(closestDelivery.date), 'LLL', { locale: ru });
+    const day = format(new Date(closestDelivery.date), 'd', { locale: ru });
+    const dayOfWeek = format(new Date(closestDelivery.date), 'eeee', { locale: ru });
 
     return (
         <div className="order-card__footer">
@@ -25,8 +26,8 @@ export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ sortedDelivery
                     <span>в {dayOfWeek} –</span>
                 </h5>
                 <div>
-                    <p>{sortedDelivery.interval}</p>
-                    <p>{`Работа на объекте ${sortedDelivery.address}`}</p>
+                    <p>{closestDelivery.interval}</p>
+                    <p>{`Работа на объекте ${closestDelivery.address}`}</p>
                 </div>
 
             </div>

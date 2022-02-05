@@ -1,12 +1,16 @@
-import './OrderCardHeader.scss'
-import { Progress } from '../Progress';
+import { memo } from 'react';
+
+import Progress from '../Progress';
 import { Order } from '../../types/order';
+
+import './OrderCardHeader.scss';
 
 interface OrderCardHeaderProps {
     order?: Order
 }
 
-export const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
+const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
+
     return <div className="order-card__header">
         <div className="order-card__header-title">
             <h2>6 дней</h2>
@@ -26,3 +30,5 @@ export const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
         </div>
     </div>
 };
+
+export default memo(OrderCardHeader);

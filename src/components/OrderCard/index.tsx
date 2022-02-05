@@ -1,19 +1,24 @@
-import { sortBy, orderBy } from 'lodash';
+import { orderBy } from 'lodash';
+
 import { Order } from '../../types/order';
+
 import { OrderCardFooter } from '../OrderCardFooter';
-import { OrderCardHeader } from '../OrderCardHeader';
+import OrderCardHeader from '../OrderCardHeader';
 
 import './OrderCard.scss';
 
 interface OrderCardProps {
-    order: Order
-}
+    order: Order;
+    onShowDetails: (order: Order) => void;
+};
 
-export const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
-    const sortedDelivery = orderBy(order.deliveries, 'date', 'desc')[0];
+export const OrderCard: React.FC<OrderCardProps> = ({ order, onShowDetails }) => {
+    const closestDelivery = orderBy(order.deliveries, 'date', 'desc')[0];
 
-    return <>
-        <OrderCardHeader order={order} />
-        <OrderCardFooter sortedDelivery={sortedDelivery} />
-    </>;
+    return (
+        <div className="order-card" onClick={() => onShowDetails(order)}>
+            <OrderCardHeader order={order} />
+            <OrderCardFooter closestDelivery={closestDelivery} />
+        </div>
+    );
 };

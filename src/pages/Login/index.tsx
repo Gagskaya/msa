@@ -19,14 +19,15 @@ const Login = () => {
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
 
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
 
 
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
