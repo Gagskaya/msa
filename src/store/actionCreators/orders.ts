@@ -18,14 +18,11 @@ export const setOrders = (payload: Order[] | null): OrdersActions => ({
     payload
 });
 
-// export const duplicateOrder = (payload: Order): OrdersActions => ({
-//     type: OrdersActionsTypes.DUPLICATE_ORDER,
-//     payload
-// });
 
 export const duplicateOrder = (payload: Order | null) => (dispatch: Dispatch) => {
     (async function () {
-        const res = await axios.post<Order[]>(`http://localhost:3001/orders/?clientId=${payload?.clientId}`, payload);
-        dispatch(setOrders(res.data));
+        const res = await axios.post<Order>(`http://localhost:3001/orders/?clientId=${payload?.clientId}`, payload);
+        // dispatch(setOrders(res.data));
+        console.log(res.data);
     }())
 };

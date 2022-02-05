@@ -7,10 +7,6 @@ export enum OrdersActionsTypes {
     DUPLICATE_ORDER = 'orders/DUPLICATE_ORDER'
 }
 
-export interface FetchOrdersAction extends Action<OrdersActionsTypes> {
-    type: OrdersActionsTypes.FETCH_ORDERS,
-}
-
 export interface SetOrdersAction extends Action<OrdersActionsTypes> {
     type: OrdersActionsTypes.SET_ORDERS,
     payload: Order[] | null
@@ -21,4 +17,4 @@ export interface DuplicateOrderAction extends Action<OrdersActionsTypes> {
     payload: Order
 }
 
-export type OrdersActions = FetchOrdersAction | SetOrdersAction | DuplicateOrderAction;
+export type OrdersActions = SetOrdersAction | DuplicateOrderAction;

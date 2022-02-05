@@ -5,6 +5,6 @@ export interface User {
 }
 
 export interface UsersState {
-    items: null | User[]
+    items: User[]
     item: null | User
 }

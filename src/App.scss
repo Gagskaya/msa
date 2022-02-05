@@ -1,27 +1,37 @@
-*, *::after, *::before {
-    margin : 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    outline: none;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  outline: none;
 }
-h1,h2,h3,h4,h5,h6 {
-    font-weight: bold;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
 .container {
-    max-width: 420px;
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
+
 .sign-out {
-    position: absolute;
-    top: 0;
-    left: 1140px;
+  position: absolute;
+  top: 0;
+  left: 1140px;
 }

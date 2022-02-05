@@ -27,10 +27,6 @@ const OrderDetails = () => {
     const orderDetails = useSelector(selectOrderDetails);
     const user = useSelector(selectUser);
 
-    useEffect(() => {
-        dispatch(fetchOrders(user?.id, `&id=${id}`));
-    }, [dispatch, user]);
-
     const onMoveBack = () => {
         navigate('/orders');
     };
@@ -39,8 +35,15 @@ const OrderDetails = () => {
         if (order) {
             const newOrder = { ...order, id: Math.random() };
             dispatch(duplicateOrder(newOrder));
-        }
+            navigate(`/orders/${newOrder.id}`)
+        };
+
     };
+
+    useEffect(() => {
+        dispatch(fetchOrders(user?.id, `&id=${id}`));
+    }, [dispatch, user]);
+
     return (
         <div className="order-details">
             <div className="order-details__btn">
@@ -53,14 +56,13 @@ const OrderDetails = () => {
                 <h3>Доставки</h3>
                 {orderDetails?.deliveries.map((delivery) =>
                     <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
-
             </div>
             <div className="order-details__order-btns">
-                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(orderDetails)} />
-                <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} />
+                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(orderDetails)} alt='Кнопка дублирования' />
+                <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} alt='Кнопка отмены' />
             </div>
         </div>
-    )
+    );
 };
 
 export default memo(OrderDetails)

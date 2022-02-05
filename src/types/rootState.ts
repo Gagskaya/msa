@@ -1,7 +1,6 @@
-import { OrderDetailsState } from "./orderDetails";
-import { OrdersState } from "./order";
 import { UsersState } from "./user";
-
+import { OrdersState } from "./order";
+import { OrderDetailsState } from "./orderDetails";
 
 export interface RootState {
     users: UsersState

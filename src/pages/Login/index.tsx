@@ -19,15 +19,9 @@ const Login = () => {
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
 
-
-
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -37,29 +31,34 @@ const Login = () => {
     if (!login || !password) {
       setError('error');
       return;
-    }
+    };
 
     if (loggedInUser) {
       toast.success("Авторизация успешна", {
         position: toast.POSITION.TOP_CENTER,
       });
-      setLogin('');
-      setPassword('');
-      setError(null);
+
       navigate('/orders');
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
       dispatch(setUser(loggedInUser));
-    }
 
-    else {
-      toast.error("Неправильный логин или пароль, повторите попытку", {
-        position: toast.POSITION.TOP_CENTER,
-      });
       setLogin('');
       setPassword('');
       setError(null);
-    }
-  }
+    } else {
+      toast.error("Неправильный логин или пароль, повторите попытку", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+
+      setLogin('');
+      setPassword('');
+      setError(null);
+    };
+  };
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   return (
     <div className="login">
@@ -75,7 +74,7 @@ const Login = () => {
         </div>
       </form>
     </div>
-  )
+  );
 };
 
 export default memo(Login)

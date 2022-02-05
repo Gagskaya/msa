@@ -17,11 +17,7 @@ const Orders = () => {
 
     const orders = useSelector(selectOrders);
     const user = useSelector(selectUser);
-
-    useEffect(() => {
-        dispatch(fetchOrders(user?.id));
-    }, [dispatch, user]);
-
+    console.log(orders);
     const onSignOut = () => {
         localStorage.removeItem('loggedInUser');
         navigate('/');
@@ -31,6 +27,10 @@ const Orders = () => {
         navigate(`/orders/${order.id}`);
         dispatch(setOrderDetails(order));
     };
+
+    useEffect(() => {
+        dispatch(fetchOrders(user?.id));
+    }, [dispatch, user]);
 
     return (
         <div className="orders">
@@ -44,7 +44,7 @@ const Orders = () => {
                     <OrderCard order={order} key={order.id} onShowDetails={onShowDetails} />)}
             </div>
         </div>
-    )
+    );
 };
 
 export default memo(Orders);

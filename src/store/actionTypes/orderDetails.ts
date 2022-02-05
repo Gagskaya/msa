@@ -5,7 +5,6 @@ export enum OrderDetailsActionsTypes {
     SET_ORDER_DETAILS = '/orderDetails/SET_ORDER_DETAILS'
 }
 
-
 export interface SetOrderDetailsAction extends Action<OrderDetailsActionsTypes> {
     type: OrderDetailsActionsTypes.SET_ORDER_DETAILS,
     payload: Order | null

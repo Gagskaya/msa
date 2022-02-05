@@ -11,5 +11,10 @@ interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({ placeholder, className, value, onChange, type, error }) => {
-    return <input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className={classNames('input', className, error === 'error' ? 'error' : '')} />
+    return (
+        <input
+            type={type} value={value}
+            onChange={(e) => onChange(e.target.value)} placeholder={placeholder}
+            className={classNames('input', className, error === 'error' ? 'error' : '')} />
+    );
 };

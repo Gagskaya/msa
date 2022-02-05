@@ -6,7 +6,10 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ title, type }) => {
-    return <button className='button' type={type}>
-        {title}
-    </button>;
+
+    return (
+        <button className='button' type={type}>
+            {title}
+        </button>
+    );
 };

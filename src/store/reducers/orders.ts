@@ -2,7 +2,7 @@ import { OrdersState } from "../../types/order"
 import { OrdersActions, OrdersActionsTypes } from "../actionTypes/orders";
 
 const initialState: OrdersState = {
-    items: null
+    items: []
 }
 
 export const orders = (state = initialState, action: OrdersActions) => {
@@ -15,7 +15,7 @@ export const orders = (state = initialState, action: OrdersActions) => {
         case OrdersActionsTypes.DUPLICATE_ORDER:
             return {
                 ...state,
-                items: action.payload
+                items: [...state.items, action.payload]
             }
         default:
             return state;

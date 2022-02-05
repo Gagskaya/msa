@@ -2,6 +2,7 @@ import { format } from 'date-fns'
 import { ru } from 'date-fns/locale';
 
 import { Delivery } from '../../types/order';
+
 import './DeliveryCard.scss';
 
 interface DeliveryCardProps {

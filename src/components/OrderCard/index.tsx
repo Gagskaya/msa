@@ -22,3 +22,4 @@ export const OrderCard: React.FC<OrderCardProps> = ({ order, onShowDetails }) =>
         </div>
     );
 };
+

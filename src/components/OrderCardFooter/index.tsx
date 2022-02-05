@@ -9,7 +9,6 @@ interface OrderCardFooterProps {
 }
 
 export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ closestDelivery }) => {
-
     const month = format(new Date(closestDelivery.date), 'LLL', { locale: ru });
     const day = format(new Date(closestDelivery.date), 'd', { locale: ru });
     const dayOfWeek = format(new Date(closestDelivery.date), 'eeee', { locale: ru });
