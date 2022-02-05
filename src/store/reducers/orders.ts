@@ -12,6 +12,11 @@ export const orders = (state = initialState, action: OrdersActions) => {
                 ...state,
                 items: action.payload
             }
+        case OrdersActionsTypes.DUPLICATE_ORDER:
+            return {
+                ...state,
+                items: action.payload
+            }
         default:
             return state;
     }

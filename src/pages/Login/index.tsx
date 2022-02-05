@@ -3,8 +3,8 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 
-import { fetchUsers, setLoggedInUser } from "../../store/actionCreators/users";
-import { selectLoggedInUser, selectUsers } from "../../store/selectors/users";
+import { fetchUsers, setUser } from "../../store/actionCreators/users";
+import { selectUsers } from "../../store/selectors/users";
 
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const users = useSelector(selectUsers);
-  // const loggedInUser = useSelector(selectLoggedInUser)
+
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
@@ -47,7 +47,7 @@ const Login = () => {
       setError(null);
       navigate('/orders');
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
-      dispatch(setLoggedInUser(loggedInUser));
+      dispatch(setUser(loggedInUser));
     }
 
     else {

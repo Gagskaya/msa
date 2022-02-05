@@ -16,7 +16,7 @@ export const setUsers = (payload: User[]): UsersActions => ({
     payload
 });
 
-export const setLoggedInUser = (payload: User): UsersActions => ({
+export const setUser = (payload: User): UsersActions => ({
     type: UsersActionsTypes.SET_LOGGED_IN_USER,
     payload
 });

@@ -5,18 +5,19 @@ import { DeliveryCard } from "../../components/DeliveryCard";
 import { OrderBtn } from "../../components/OrderBtn";
 import { OrderCardHeader } from "../../components/OrderCardHeader";
 
+import { selectDetails } from "../../store/selectors/details";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../store/selectors/users";
+import { duplicateOrder, fetchOrders } from "../../store/actionCreators/orders";
+import { Order } from "../../types/order";
+
 import orderAddBtn from '../../assets/images/order-add-btn.svg';
 import orderDeleteBtn from '../../assets/images/order-delete-btn.svg';
 import deliveryIcon from '../../assets/images/delivery-img.svg';
 import arrowIcon from '../../assets/images/arrow.svg';
 
-import './Details.scss'
-import { selectDetails } from "../../store/selectors/details";
-import { useDispatch, useSelector } from "react-redux";
-import { selectLoggedInUser } from "../../store/selectors/users";
-import { duplicateOrder, fetchOrders } from "../../store/actionCreators/orders";
-import { Order } from "../../types/order";
 
+import './Details.scss';
 
 
 const Details = () => {
@@ -24,18 +25,18 @@ const Details = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const details = useSelector(selectDetails);
-    const user = useSelector(selectLoggedInUser);
-    console.log(details);
+    const user = useSelector(selectUser);
+
     const moveBack = () => {
         navigate('/orders');
-    }
-    const onduplicateOrder = (order: Order | null) => {
-        if (order) {
-            const newOrder = { ...order, id: 10 };
-            dispatch(duplicateOrder(newOrder));
+    };
 
+    const onDuplicateOrder = (order: Order | null) => {
+        if (order) {
+            const newOrder = { ...order, id: Math.random() };
+            dispatch(duplicateOrder(newOrder));
         }
-    }
+    };
 
     useEffect(() => {
         dispatch(fetchOrders(user?.id, `&id=${id}`));
@@ -44,7 +45,7 @@ const Details = () => {
     return (
         <div className="details">
             <div className="details__btn">
-                <button onClick={() => onduplicateOrder(details)}>Назад</button>
+                <button onClick={moveBack}>Назад</button>
             </div>
             <div className="details__header">
                 <OrderCardHeader />
@@ -55,7 +56,7 @@ const Details = () => {
 
             </div>
             <div className="details__order-btns">
-                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} />
+                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(details)} />
                 <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} />
             </div>
         </div>

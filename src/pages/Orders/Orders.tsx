@@ -6,7 +6,7 @@ import { OrderCard } from '../../components/OrderCard';
 import { setDetails } from '../../store/actionCreators/details';
 import { fetchOrders } from '../../store/actionCreators/orders';
 import { selectOrders } from '../../store/selectors/orders';
-import { selectLoggedInUser } from '../../store/selectors/users';
+import { selectUser } from '../../store/selectors/users';
 import { Order } from '../../types/order';
 
 import './Orders.scss';
@@ -16,7 +16,7 @@ const Orders = () => {
     const navigate = useNavigate();
 
     const orders = useSelector(selectOrders);
-    const user = useSelector(selectLoggedInUser);
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         dispatch(fetchOrders(user?.id));

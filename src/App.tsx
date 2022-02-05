@@ -1,13 +1,14 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { memo, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { setUser } from './store/actionCreators/users';
 
 import Details from './pages/Details';
 import Login from './pages/Login';
 import Orders from './pages/Orders/Orders';
 
-import './App.scss'
-import { setLoggedInUser } from './store/actionCreators/users';
-import { useDispatch } from 'react-redux';
+import './App.scss';
 
 function App() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     if (loggedInUser) {
       const parsedLoggedInUser = JSON.parse(loggedInUser);
-      dispatch(setLoggedInUser(parsedLoggedInUser));
+      dispatch(setUser(parsedLoggedInUser));
       // navigate('/orders');
     }
     else {
