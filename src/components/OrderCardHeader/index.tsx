@@ -16,16 +16,18 @@ interface OrderCardHeaderProps {
 const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
     if (order?.deliveries) {
         const orderByDate = orderBy(order.deliveries, 'date', 'asc');
-        const startMonth = format(new Date(orderByDate[0].date), 'LLL', { locale: ru });
         const startDay = format(new Date(orderByDate[0].date), 'd', { locale: ru });
+        const startMonth = format(new Date(orderByDate[0].date), 'LLL', { locale: ru });
         const endDay = format(new Date(orderByDate[orderByDate.length - 1].date), 'd', { locale: ru });
         const endMonth = format(new Date(orderByDate[orderByDate.length - 1].date), 'LLL', { locale: ru });
         const distance = formatDistance(new Date(orderByDate[0].date), new Date(orderByDate[orderByDate.length - 1].date), { locale: ru });
+        const distanceFromNow = formatDistance(new Date(), new Date(orderByDate[orderByDate.length - 1].date), { locale: ru });
+        const isUpToDate = new Date(orderByDate[orderByDate.length - 1].date) > new Date();
 
         return (
             <div className="order-card__header">
                 <div className="order-card__header-title">
-                    <h2>6 дней</h2>
+                    <h2>{distance}</h2>
                     <div>
                         <span>{order?.packageName}</span>
                         <h4>{order?.packageCalories}</h4>
@@ -36,8 +38,8 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
                     <Progress order={order} />
                     <div className="order-card__header-progress-footer">
                         <p>{startMonth} {startDay}</p>
-                        <p>Осталось {`${distance}`}</p>
-                        <p>{endDay} {endMonth} </p>
+                        <p>{`Осталось ${isUpToDate ? distanceFromNow : '0 дней'}`}</p>
+                        <p>{endMonth} {endDay} </p>
                     </div>
                 </div>
             </div>
