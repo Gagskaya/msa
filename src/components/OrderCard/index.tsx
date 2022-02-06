@@ -13,8 +13,8 @@ interface OrderCardProps {
 };
 
 export const OrderCard: React.FC<OrderCardProps> = ({ order, onShowDetails }) => {
-    const closestDelivery = orderBy(order.deliveries, 'date', 'desc')[0];
-
+    const closestDeliveries = orderBy(order.deliveries, 'date', 'asc');
+    const closestDelivery = closestDeliveries.find(delivery => new Date(delivery.date) > new Date());
     return (
         <div className="order-card" onClick={() => onShowDetails(order)}>
             <OrderCardHeader order={order} />

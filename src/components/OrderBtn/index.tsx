@@ -1,4 +1,3 @@
-import { Order } from '../../types/order';
 import './OrderBtn.scss';
 
 interface OrderBtnProps {

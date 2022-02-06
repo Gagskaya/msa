@@ -50,9 +50,6 @@ const OrderDetails = () => {
         };
     }, [dispatch, user, id]);
 
-
-
-
     return (
         <div className="order-details">
             <div className="order-details__btn">
