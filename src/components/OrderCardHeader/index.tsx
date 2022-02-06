@@ -14,8 +14,6 @@ interface OrderCardHeaderProps {
 };
 
 const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
-    const a = orderBy(order?.deliveries, 'date', 'desc');
-    console.log(order.deliveries, a);
     const startMonth = order?.deliveries && format(new Date(order.deliveries[0].date), 'LLL', { locale: ru });
     const startDay = order?.deliveries && format(new Date(order.deliveries[0].date), 'd', { locale: ru });
     const endDay = order?.deliveries && format(new Date(order.deliveries[order.deliveries.length - 1].date), 'd', { locale: ru });
