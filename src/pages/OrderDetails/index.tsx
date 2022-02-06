@@ -35,20 +35,20 @@ const OrderDetails = () => {
     const onDuplicateOrder = (order: Order) => {
         const newOrder = { ...order, id: Math.random() };
         dispatch(fetchDuplicateOrder(newOrder));
-        navigate(`/orders/${newOrder.id}`)
+        navigate(`/orders/${newOrder.id}`);
     };
 
     const onRemoveOrder = (order: Order) => {
         if (order.clientId === user.id) {
             dispatch(fetchRemoveOrder(order));
             navigate('/orders');
-        }
+        };
     };
 
     useEffect(() => {
         if (user) {
             dispatch(fetchOrderDetails(user.id, `&id=${id}`));
-        }
+        };
     }, [dispatch, user, id]);
 
     return (
@@ -57,7 +57,7 @@ const OrderDetails = () => {
                 <button onClick={onMoveBack}>Назад</button>
             </div>
             <div className="order-details__header">
-                <OrderCardHeader />
+                <OrderCardHeader order={orderDetails} />
             </div>
             <div className="order-details__delivery">
                 <h3>Доставки</h3>

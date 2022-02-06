@@ -29,7 +29,6 @@ export const duplicateOrder = (payload: Order): OrdersActions => ({
 });
 
 export const fetchRemoveOrder = (payload: Order) => (dispatch: Dispatch) => {
-    console.log(payload.id);
     (async function () {
         await axios.delete(`http://localhost:3001/orders/${payload.id}`);
         dispatch(removeOrder(payload));

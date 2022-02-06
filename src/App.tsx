@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { setUser } from './store/actionCreators/users';
 
-import OrderDetails from './pages/OrderDetails';
 import Login from './pages/Login';
+import OrderDetails from './pages/OrderDetails';
 import Orders from './pages/Orders';
 
 import './App.scss';
@@ -19,7 +19,7 @@ function App() {
     if (loggedInUser) {
       const parsedLoggedInUser = JSON.parse(loggedInUser);
       dispatch(setUser(parsedLoggedInUser));
-      // navigate('/orders');
+      navigate('/orders');
     }
     else {
       navigate('/')
