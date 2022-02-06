@@ -19,7 +19,7 @@ function App() {
     if (loggedInUser) {
       const parsedLoggedInUser = JSON.parse(loggedInUser);
       dispatch(setUser(parsedLoggedInUser));
-      navigate('/orders');
+      // navigate('/orders');
     }
     else {
       navigate('/')
@@ -27,7 +27,7 @@ function App() {
   }, [dispatch, loggedInUser]);
 
   return (
-    <div className="container">
+    <div className="main">
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='orders' element={<Orders />} />

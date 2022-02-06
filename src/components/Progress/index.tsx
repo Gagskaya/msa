@@ -1,12 +1,12 @@
 import './Progress.scss';
 
 interface ProgressProps {
-    newProgress: number
-}
+    progressValue: number
+};
 
-export const Progress: React.FC<ProgressProps> = ({ newProgress }) => {
+export const Progress: React.FC<ProgressProps> = ({ progressValue }) => {
 
     return (
-        <progress value={newProgress} max="100" className='progress'></progress>
+        <progress value={progressValue} max="100" className='progress'></progress>
     );
 };

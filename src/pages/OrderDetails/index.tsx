@@ -51,13 +51,36 @@ const OrderDetails = () => {
         };
     }, [dispatch, user, id]);
 
+    const isDelivered = orderDetails?.deliveries?.map(delivery => {
+        if (new Date(delivery.date) <= new Date()) {
+            return true;
+        }
+        return false;
+    })
+    const progress = isDelivered?.map(item => {
+        if (item) {
+            return 100 / isDelivered.length;
+        }
+        else {
+            return
+        }
+    });
+
+    const progressValue = progress.reduce((total: number, item) => {
+        if (item) {
+            return total += item;
+        }
+        else {
+            return total;
+        }
+    }, 0);
     return (
         <div className="order-details">
             <div className="order-details__btn">
                 <button onClick={onMoveBack}>Назад</button>
             </div>
             <div className="order-details__header">
-                <OrderCardHeader order={orderDetails} />
+                <OrderCardHeader order={orderDetails} progressValue={progressValue} />
             </div>
             <div className="order-details__delivery">
                 <h3>Доставки</h3>

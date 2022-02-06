@@ -17,7 +17,7 @@ export const OrderCard: React.FC<OrderCardProps> = ({ order, onShowDetails }) =>
 
     return (
         <div className="order-card" onClick={() => onShowDetails(order)}>
-            <OrderCardHeader order={order} />
+            {/* <OrderCardHeader order={order} /> */}
             <OrderCardFooter closestDelivery={closestDelivery} />
         </div>
     );
