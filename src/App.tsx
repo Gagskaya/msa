@@ -1,6 +1,6 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { memo, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { setUser } from './store/actionCreators/users';
 
@@ -25,8 +25,6 @@ function App() {
       navigate('/')
     }
   }, [dispatch, loggedInUser]);
-
-
 
   return (
     <div className="main">

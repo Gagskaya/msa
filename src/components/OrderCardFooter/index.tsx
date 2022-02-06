@@ -1,4 +1,4 @@
-import { Delivery, Order } from '../../types/order';
+import { Delivery } from '../../types/order';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
 

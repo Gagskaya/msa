@@ -7,7 +7,6 @@ interface ProgressProps {
 };
 
 export const Progress: React.FC<ProgressProps> = ({ order }) => {
-
     const progressValues = order?.deliveries?.map(delivery => {
         const date = new Date(delivery.date);
         if (date <= new Date()) {
