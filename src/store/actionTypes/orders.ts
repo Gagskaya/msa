@@ -23,4 +23,4 @@ export interface RemoveOrder extends Action<OrdersActionsTypes> {
     payload: Order
 }
 
-export type OrdersActions = SetOrders | DuplicateOrder;
+export type OrdersActions = SetOrders | DuplicateOrder | RemoveOrder;

@@ -8,7 +8,7 @@ import OrderCardHeader from "../../components/OrderCardHeader";
 
 import { selectOrderDetails } from "../../store/selectors/orderDetails";
 import { selectUser } from "../../store/selectors/users";
-import { duplicateOrder, fetchDuplicateOrder } from "../../store/actionCreators/orders";
+import { duplicateOrder, fetchDuplicateOrder, fetchRemoveOrder } from "../../store/actionCreators/orders";
 import { fetchOrderDetails } from "../../store/actionCreators/orderDetails";
 import { Order } from "../../types/order";
 
@@ -38,12 +38,12 @@ const OrderDetails = () => {
         navigate(`/orders/${newOrder.id}`)
     };
 
-    // const omRemoveOrder = (order: Order | null) => {
-    //     if (order) {
-    //         dispatch(removeOrder(order));
-    //         navigate(`/orders/${newOrder.id}`);
-    //     };
-    // };
+    const onRemoveOrder = (order: Order) => {
+        if (order.clientId === user.id) {
+            dispatch(fetchRemoveOrder(order));
+            navigate('/orders');
+        }
+    };
 
     useEffect(() => {
         if (user) {
@@ -65,8 +65,8 @@ const OrderDetails = () => {
                     <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
             </div>
             <div className="order-details__order-btns">
-                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} onDuplicateOrder={() => onDuplicateOrder(orderDetails)} alt='Кнопка дублирования' />
-                <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} alt='Кнопка отмены' />
+                <OrderBtn title='Дублировать заказ' icon={orderAddBtn} handleChange={() => onDuplicateOrder(orderDetails)} alt='Кнопка дублирования' />
+                <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} handleChange={() => onRemoveOrder(orderDetails)} alt='Кнопка отмены' />
             </div>
         </div>
     );

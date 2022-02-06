@@ -11,13 +11,18 @@ export const orders = (state = initialState, action: OrdersActions) => {
             return {
                 ...state,
                 items: action.payload
-            }
+            };
         case OrdersActionsTypes.DUPLICATE_ORDER:
             return {
                 ...state,
                 items: [...state.items, action.payload]
-            }
+            };
+        case OrdersActionsTypes.REMOVE_ORDER:
+            return {
+                ...state,
+                items: state.items.filter(item => item.id !== action.payload.id)
+            };
         default:
             return state;
-    }
+    };
 }

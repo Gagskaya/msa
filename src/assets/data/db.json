@@ -1,32 +1,6 @@
 {
   "orders": [
     {
-      "id": 1,
-      "clientId": 1,
-      "packageName": "ULTRA рацион",
-      "packageCalories": "9999 кКал",
-      "deliveries": [
-        {
-          "id": 1,
-          "date": "2021-02-01",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 2,
-          "date": "2021-02-02",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        },
-        {
-          "id": 3,
-          "date": "2021-10-03",
-          "interval": "8:00 - 10:00",
-          "address": "Дом"
-        }
-      ]
-    },
-    {
       "id": 2,
       "clientId": 2,
       "packageName": "ULTRA рацион",
@@ -79,54 +53,54 @@
       ]
     },
     {
-      "id": 0.884435114943964,
-      "clientId": 1,
+      "id": 0.9053374571632054,
+      "clientId": 2,
       "packageName": "ULTRA рацион",
-      "packageCalories": "9999 кКал",
+      "packageCalories": "8888 кКал",
       "deliveries": [
         {
           "id": 1,
-          "date": "2021-02-01",
+          "date": "2020-12-31",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         },
         {
           "id": 2,
-          "date": "2021-02-02",
+          "date": "2021-01-10",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         },
         {
           "id": 3,
-          "date": "2021-10-03",
+          "date": "2021-05-01",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         }
       ]
     },
     {
-      "id": 0.6520234138819314,
-      "clientId": 1,
+      "id": 0.6679081292341464,
+      "clientId": 2,
       "packageName": "ULTRA рацион",
-      "packageCalories": "9999 кКал",
+      "packageCalories": "8888 кКал",
       "deliveries": [
         {
           "id": 1,
-          "date": "2021-02-01",
+          "date": "2020-12-31",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         },
         {
           "id": 2,
-          "date": "2021-02-02",
+          "date": "2021-01-10",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         },
         {
           "id": 3,
-          "date": "2021-10-03",
+          "date": "2021-05-01",
           "interval": "8:00 - 10:00",
-          "address": "Дом"
+          "address": "Стройка"
         }
       ]
     }

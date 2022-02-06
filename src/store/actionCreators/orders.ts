@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { Dispatch } from "redux";
 import { Order } from "../../types/order";
-import { OrdersActionsTypes, OrdersActions } from "../actionTypes/orders";
+import { OrdersActionsTypes, OrdersActions, RemoveOrder } from "../actionTypes/orders";
 
 export const fetchOrders = (clientId: number, orderId: string = '') => (dispatch: Dispatch) => {
     (async function () {
@@ -18,7 +18,7 @@ export const setOrders = (payload: Order[]): OrdersActions => ({
 
 export const fetchDuplicateOrder = (payload: Order) => (dispatch: Dispatch) => {
     (async function () {
-        const res = await axios.post<Order>(`http://localhost:3001/orders/?clientId=${payload?.clientId}`, payload);
+        const res = await axios.post<Order>(`http://localhost:3001/orders/?clientId=${payload.clientId}`, payload);
         dispatch(duplicateOrder(res.data));
     }());
 };
@@ -29,10 +29,14 @@ export const duplicateOrder = (payload: Order): OrdersActions => ({
 });
 
 export const fetchRemoveOrder = (payload: Order) => (dispatch: Dispatch) => {
+    console.log(payload.id);
     (async function () {
-        const res = await axios.delete<Order[]>(`http://localhost:3001/orders/?clientId=${payload?.clientId}`);
-        dispatch(setOrders(res.data));
-        console.log(res.data);
+        await axios.delete(`http://localhost:3001/orders/${payload.id}`);
+        dispatch(removeOrder(payload));
     }());
 };
-// export const removeOrder = (payload: O)
+
+export const removeOrder = (payload: Order): OrdersActions => ({
+    type: OrdersActionsTypes.REMOVE_ORDER,
+    payload
+});
