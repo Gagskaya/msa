@@ -39,3 +39,4 @@ export const removeOrder = (payload: Order): OrdersActions => ({
     type: OrdersActionsTypes.REMOVE_ORDER,
     payload
 });
+

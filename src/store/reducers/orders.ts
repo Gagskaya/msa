@@ -2,7 +2,8 @@ import { OrdersState } from "../../types/order"
 import { OrdersActions, OrdersActionsTypes } from "../actionTypes/orders";
 
 const initialState: OrdersState = {
-    items: []
+    items: [],
+    orderProgressValue: 0
 }
 
 export const orders = (state = initialState, action: OrdersActions) => {

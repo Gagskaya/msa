@@ -105,7 +105,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 0.6120486561286633,
       "clientId": 2,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
@@ -125,6 +125,32 @@
         {
           "id": 3,
           "date": "2021-11-30",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.7836816124084491,
+      "clientId": 2,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2020-12-31",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2021-01-10",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2023-05-01",
           "interval": "8:00 - 10:00",
           "address": "Стройка"
         }

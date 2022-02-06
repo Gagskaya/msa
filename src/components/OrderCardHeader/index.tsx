@@ -9,10 +9,10 @@ import './OrderCardHeader.scss';
 
 interface OrderCardHeaderProps {
     order: Order;
-    progressValue: number
+
 };
 
-const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order, progressValue }) => {
+const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
 
     return (
         <div className="order-card__header">
@@ -25,7 +25,7 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order, progressValue 
 
             </div>
             <div className="order-card__header-progress">
-                <Progress progressValue={progressValue} />
+                <Progress order={order} />
                 <div className="order-card__header-progress-footer">
                     <p>20 окт</p>
                     <p>Осталось 25 дней</p>
