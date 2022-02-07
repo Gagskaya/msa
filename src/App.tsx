@@ -22,7 +22,7 @@ function App() {
       // navigate('/orders');
     }
     else {
-      navigate('/')
+      navigate('/');
     }
   }, [dispatch, loggedInUser]);
 

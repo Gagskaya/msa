@@ -2,7 +2,7 @@
   "orders": [
     {
       "id": 0.4874007458879095,
-      "clientId": 2,
+      "clientId": 1,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
       "deliveries": [
@@ -14,13 +14,13 @@
         },
         {
           "id": 2,
-          "date": "2022-04-09",
+          "date": "2022-02-04",
           "interval": "8:00 - 10:00",
           "address": "Стройка"
         },
         {
           "id": 3,
-          "date": "2022-02-11",
+          "date": "2022-02-08",
           "interval": "8:00 - 10:00",
           "address": "Стройка"
         }
@@ -28,7 +28,7 @@
     },
     {
       "id": 0.4874007458379095,
-      "clientId": 2,
+      "clientId": 3,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
       "deliveries": [
@@ -47,6 +47,58 @@
         {
           "id": 3,
           "date": "2022-02-17",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.4039645331369439,
+      "clientId": 1,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-13",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-01-25",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-17",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.6397652506467866,
+      "clientId": 2,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-08",
           "interval": "8:00 - 10:00",
           "address": "Стройка"
         }

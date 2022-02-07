@@ -1,9 +1,11 @@
+import { LoadingStatus } from "../../types/loadingStatus";
 import { OrdersState } from "../../types/order"
 import { OrdersActions, OrdersActionsTypes } from "../actionTypes/orders";
 
 const initialState: OrdersState = {
     items: [],
-    orderProgressValue: 0
+    orderProgressValue: 0,
+    loadingStatus: LoadingStatus.NEVER
 }
 
 export const orders = (state = initialState, action: OrdersActions) => {
@@ -22,6 +24,11 @@ export const orders = (state = initialState, action: OrdersActions) => {
             return {
                 ...state,
                 items: state.items.filter(item => item.id !== action.payload.id)
+            };
+        case OrdersActionsTypes.SET_ORDERS_LOADING_STATUS:
+            return {
+                ...state,
+                loadingStatus: action.payload
             };
         default:
             return state;

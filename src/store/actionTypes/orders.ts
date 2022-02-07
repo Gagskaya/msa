@@ -1,4 +1,5 @@
 import { Action } from "redux";
+import { LoadingStatus } from "../../types/loadingStatus";
 import { Order } from "../../types/order";
 
 export enum OrdersActionsTypes {
@@ -6,7 +7,8 @@ export enum OrdersActionsTypes {
     SET_ORDERS = 'orders/SET_ORDERS',
     DUPLICATE_ORDER = 'orders/DUPLICATE_ORDER',
     REMOVE_ORDER = 'orders/REMOVE_ORDER',
-    SET_ORDER_PROGRESS_VALUE = 'orders/SET_ORDER_PROGRESS_VALUE'
+    SET_ORDER_PROGRESS_VALUE = 'orders/SET_ORDER_PROGRESS_VALUE',
+    SET_ORDERS_LOADING_STATUS = 'orders/SET_ORDERS_LOADING_STATUS'
 };
 
 export interface SetOrders extends Action<OrdersActionsTypes> {
@@ -24,4 +26,9 @@ export interface RemoveOrder extends Action<OrdersActionsTypes> {
     payload: Order;
 };
 
-export type OrdersActions = SetOrders | DuplicateOrder | RemoveOrder;
+export interface SetOrdersLoadingStatus extends Action<OrdersActionsTypes> {
+    type: OrdersActionsTypes.SET_ORDERS_LOADING_STATUS,
+    payload: LoadingStatus
+};
+
+export type OrdersActions = SetOrders | DuplicateOrder | RemoveOrder | SetOrdersLoadingStatus;

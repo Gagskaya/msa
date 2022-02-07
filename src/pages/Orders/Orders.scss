@@ -1,16 +1,16 @@
 .orders {
-    padding: 25px 30px;
-    &__title {
-        margin-bottom: 11px;
-        display: flex;
-        align-items: center;
-        h2 {
-            font-size: 22px;
-            margin-right: 8px;
-        }
-        span {
-            color: #929292;
-            font-size: 20px;
-        }
+  padding: 25px 30px;
+  &__title {
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
+    h2 {
+      font-size: 22px;
+      margin-right: 8px;
     }
+    span {
+      color: #929292;
+      font-size: 20px;
+    }
+  }
 }

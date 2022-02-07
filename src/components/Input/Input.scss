@@ -1,12 +1,12 @@
 .input {
-    background: #FAFAFA;
-    border: 2px solid #1E6FB9;
-    box-sizing: border-box;
-    border-radius: 6px;
-    padding: 17px;
-    font-size: 18px;
-    background: transparent;
-    &.error {
-        border-color: red;
-    }
+  background: #fafafa;
+  border: 2px solid #1e6fb9;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 17px;
+  font-size: 18px;
+  background: transparent;
+  &.error {
+    border-color: red;
+  }
 }

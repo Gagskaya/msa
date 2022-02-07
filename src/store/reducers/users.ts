@@ -3,7 +3,7 @@ import { UsersActions, UsersActionsTypes } from "../actionTypes/users";
 
 const initialState: UsersState = {
     items: [],
-    item: {} as User
+    item: {} as User,
 };
 
 export const users = (state = initialState, action: UsersActions) => {

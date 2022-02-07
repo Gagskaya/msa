@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { OrderCard } from '../../components/OrderCard';
 import { setOrderDetails } from '../../store/actionCreators/orderDetails';
 import { fetchOrders } from '../../store/actionCreators/orders';
-import { selectOrders } from '../../store/selectors/orders';
+import { selectOrders, selectOrdersLoadingStatus } from '../../store/selectors/orders';
 import { selectUser } from '../../store/selectors/users';
+import { LoadingStatus } from '../../types/loadingStatus';
 import { Order } from '../../types/order';
 
 import './Orders.scss';
@@ -17,6 +18,7 @@ const Orders = () => {
 
     const orders = useSelector(selectOrders);
     const user = useSelector(selectUser);
+    const loadingStatus = useSelector(selectOrdersLoadingStatus);
 
     const onSignOut = () => {
         localStorage.removeItem('loggedInUser');
@@ -41,10 +43,11 @@ const Orders = () => {
                 <h2>Мои заказы</h2>
                 <span>{orders?.length}</span>
             </div>
-            <div className="orders__cards">
+            {loadingStatus === LoadingStatus.LOADING ? <div>Загрузка...</div> : <div className="orders__cards">
                 {orders?.map((order: Order) =>
                     <OrderCard order={order} key={order.id} onShowDetails={onShowDetails} />)}
-            </div>
+            </div>}
+
         </div>
     );
 };

@@ -15,6 +15,7 @@ export interface Delivery {
 
 export interface OrdersState {
     items: Order[];
-    orderProgressValue: number
+    orderProgressValue: number,
+    loadingStatus: string
 };
 

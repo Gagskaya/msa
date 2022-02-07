@@ -1,27 +1,27 @@
 .order-details {
-    padding: 30px 25px;
-    &__delivery {
-        h3 {
-            margin-top: 35px;
-            margin-bottom: 40px;
-        }
+  padding: 30px 25px;
+  &__delivery {
+    h3 {
+      margin-top: 35px;
+      margin-bottom: 40px;
     }
-    &__btn {
-        button {
-            font-size: 17px;
-            color: #1E6FB9;
-            border: none;
-            background:transparent;
-            margin-bottom: 22px ;
-            font-weight: normal;
-        }
+  }
+  &__btn {
+    button {
+      font-size: 17px;
+      color: #1e6fb9;
+      border: none;
+      background: transparent;
+      margin-bottom: 22px;
+      font-weight: normal;
     }
-    &__order-btns {
-        margin-top: 50px;
-        button {
-            &:last-child {
-                border: none;
-            }
-        }
+  }
+  &__order-btns {
+    margin-top: 50px;
+    button {
+      &:last-child {
+        border: none;
+      }
     }
+  }
 }

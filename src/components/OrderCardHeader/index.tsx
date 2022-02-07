@@ -38,7 +38,7 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
                     <Progress order={order} />
                     <div className="order-card__header-progress-footer">
                         <p>{startMonth} {startDay}</p>
-                        <p>{`Осталось ${isUpToDate ? distanceFromNow : '0 дней'}`}</p>
+                        <p>{`Осталось ${isUpToDate ? distanceFromNow : '0 дней (Все заказы доставлены)'}`}</p>
                         <p>{endMonth} {endDay} </p>
                     </div>
                 </div>
