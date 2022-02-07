@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { LoadingStatus } from "../../types/loadingStatus";
 import { Order } from "../../types/order";
-import { OrdersActionsTypes, OrdersActions, RemoveOrder } from "../actionTypes/orders";
+import { OrdersActionsTypes, OrdersActions } from "../actionTypes/orders";
 
 export const fetchOrders = (clientId: number, orderId: string = '') => (dispatch: Dispatch) => {
     (async function () {

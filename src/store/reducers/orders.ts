@@ -1,12 +1,12 @@
 import { LoadingStatus } from "../../types/loadingStatus";
-import { OrdersState } from "../../types/order";
+import { OrdersState } from "../../types/order"
 import { OrdersActions, OrdersActionsTypes } from "../actionTypes/orders";
 
 const initialState: OrdersState = {
     items: [],
     orderProgressValue: 0,
     loadingStatus: LoadingStatus.NEVER
-};
+}
 
 export const orders = (state = initialState, action: OrdersActions) => {
     switch (action.type) {

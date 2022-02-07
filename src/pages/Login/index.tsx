@@ -66,8 +66,14 @@ const Login = () => {
       <h1 className="login__title">Добро пожаловать!</h1>
       <form onSubmit={onSubmit} >
         <div className="login__inputs">
-          <Input placeholder='Логин' className='login__inputs-login' value={login} onChange={setLogin} type='text' error={error} />
-          <Input placeholder='Пароль' className='login__inputs-password' value={password} onChange={setPassword} type="password" error={error} />
+          <Input placeholder='Логин' className='login__inputs-login'
+            value={login}
+            onChange={setLogin}
+            type='text' error={error} />
+          <Input placeholder='Пароль' className='login__inputs-password'
+            value={password}
+            onChange={setPassword}
+            type="password" error={error} />
           {error === 'error' && <p className="login__inputs-error">Оба поля должны быть заполнены</p>}
         </div>
         <div className="login__button">

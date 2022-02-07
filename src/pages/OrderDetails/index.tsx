@@ -64,11 +64,14 @@ const OrderDetails = () => {
                 <div className="order-details__delivery">
                     <h3>Доставки</h3>
                     {orderDetails?.deliveries?.map((delivery) =>
-                        <DeliveryCard key={delivery.id} delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
+                        <DeliveryCard key={delivery.id}
+                            delivery={delivery} deliveryImage={deliveryIcon} arrowIcon={arrowIcon} />)}
                 </div>
                 <div className="order-details__order-btns">
-                    <OrderBtn title='Дублировать заказ' icon={orderAddBtn} handleChange={() => onDuplicateOrder(orderDetails)} alt='Кнопка дублирования' />
-                    <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn} handleChange={() => onRemoveOrder(orderDetails)} alt='Кнопка отмены' />
+                    <OrderBtn title='Дублировать заказ' icon={orderAddBtn}
+                        handleChange={() => onDuplicateOrder(orderDetails)} alt='Кнопка дублирования' />
+                    <OrderBtn title='Отменить  заказ' icon={orderDeleteBtn}
+                        handleChange={() => onRemoveOrder(orderDetails)} alt='Кнопка отмены' />
                 </div>
             </>}
         </div>
