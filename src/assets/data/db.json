@@ -53,7 +53,59 @@
       ]
     },
     {
-      "id": 0.4039645331369439,
+      "id": 0.4874007458379095,
+      "clientId": 3,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-13",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-01-25",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-17",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.4872007458379095,
+      "clientId": 3,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-05",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-01-23",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-17",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.4039635331369439,
       "clientId": 1,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
@@ -79,7 +131,33 @@
       ]
     },
     {
-      "id": 0.6397652506467866,
+      "id": 0.6397752506467866,
+      "clientId": 2,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-02",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.6397252506467866,
       "clientId": 2,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
@@ -105,7 +183,33 @@
       ]
     },
     {
-      "id": 0.34643916827036314,
+      "id": 0.6397252576467866,
+      "clientId": 2,
+      "packageName": "ULTRA рацион",
+      "packageCalories": "8888 кКал",
+      "deliveries": [
+        {
+          "id": 1,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 2,
+          "date": "2022-02-04",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        },
+        {
+          "id": 3,
+          "date": "2022-02-08",
+          "interval": "8:00 - 10:00",
+          "address": "Стройка"
+        }
+      ]
+    },
+    {
+      "id": 0.34643912327036314,
       "clientId": 1,
       "packageName": "ULTRA рацион",
       "packageCalories": "8888 кКал",
