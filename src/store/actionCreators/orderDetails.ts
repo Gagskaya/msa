@@ -1,5 +1,7 @@
-import axios from "axios";
 import { Dispatch } from "redux";
+
+import axios from "axios";
+
 import { LoadingStatus } from "../../types/loadingStatus";
 
 import { Order } from "../../types/order";

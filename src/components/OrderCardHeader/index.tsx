@@ -1,12 +1,14 @@
 import { memo } from 'react';
 
+import { format, formatDistance } from 'date-fns';
+import { ru } from 'date-fns/locale';
+import { orderBy } from 'lodash';
+
 import { Progress } from '../Progress';
 import { Order } from '../../types/order';
 
 import './OrderCardHeader.scss';
-import { format, formatDistance } from 'date-fns';
-import { ru } from 'date-fns/locale';
-import { orderBy } from 'lodash';
+
 
 interface OrderCardHeaderProps {
     order: Order;
@@ -46,7 +48,7 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({ order }) => {
         );
     } else {
         return null;
-    }
+    };
 };
 
 export default memo(OrderCardHeader);

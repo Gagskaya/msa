@@ -9,7 +9,7 @@ interface InputProps {
     onChange: (e: string) => void;
     type: string;
     error: string | null;
-}
+};
 
 export const Input: React.FC<InputProps> = ({ placeholder, className, value, onChange, type, error }) => {
     return (

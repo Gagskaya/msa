@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { LoadingStatus } from "../../types/loadingStatus";
+
 import { User } from "../../types/user";
 
 export enum UsersActionsTypes {
@@ -17,7 +17,5 @@ export interface SetUser extends Action<UsersActionsTypes> {
     type: UsersActionsTypes.SET_USER,
     payload: User
 };
-
-
 
 export type UsersActions = SetUsers | SetUser;

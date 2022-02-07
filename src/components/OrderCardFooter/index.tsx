@@ -6,7 +6,7 @@ import './OrderCardFooter.scss';
 
 interface OrderCardFooterProps {
     closestDelivery: Delivery | undefined
-}
+};
 
 export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ closestDelivery }) => {
     if (closestDelivery) {
@@ -36,5 +36,5 @@ export const OrderCardFooter: React.FC<OrderCardFooterProps> = ({ closestDeliver
     }
     else {
         return null;
-    }
+    };
 };

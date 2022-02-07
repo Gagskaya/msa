@@ -1,6 +1,7 @@
+import { Dispatch } from "redux";
+
 import axios from "axios";
 
-import { Dispatch } from "redux";
 import { LoadingStatus } from "../../types/loadingStatus";
 import { Order } from "../../types/order";
 import { OrdersActionsTypes, OrdersActions, RemoveOrder } from "../actionTypes/orders";
