@@ -1,31 +1,27 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 
-import axios from "axios";
+import axios from 'axios';
 
-import { LoadingStatus } from "../../types/loadingStatus";
+import { LoadingStatus } from '../../types/loadingStatus';
 
-import { Order } from "../../types/order";
-import { OrderDetailsActions, OrderDetailsActionsTypes } from "../actionTypes/orderDetails";
-
-export const fetchOrderDetails = (clientId: number, orderId: string = '') => (dispatch: Dispatch) => {
-    (async function () {
-        dispatch(setOrderDetailsLoadingStatus(LoadingStatus.LOADING));
-        const res = await axios.get<Order[]>(`http://localhost:3001/orders/?clientId=${clientId}${orderId}`);
-        dispatch(setOrderDetails(res.data[0]));
-        dispatch(setOrderDetailsLoadingStatus(LoadingStatus.SUCCESS));
-    }());
-};
+import { Order } from '../../types/order';
+import { OrderDetailsActions, OrderDetailsActionsTypes } from '../actionTypes/orderDetails';
 
 export const setOrderDetails = (payload: Order): OrderDetailsActions => ({
-    type: OrderDetailsActionsTypes.SET_ORDER_DETAILS,
-    payload
+  type: OrderDetailsActionsTypes.SET_ORDER_DETAILS,
+  payload
 });
 
 export const setOrderDetailsLoadingStatus = (payload: LoadingStatus): OrderDetailsActions => ({
-    type: OrderDetailsActionsTypes.SET_ORDER_DETAILS_LOADING_STATUS,
-    payload
+  type: OrderDetailsActionsTypes.SET_ORDER_DETAILS_LOADING_STATUS,
+  payload
 });
 
-
-
-
+export const fetchOrderDetails = (clientId: number, orderId: string = '') => (dispatch: Dispatch) => {
+  (async function () {
+    dispatch(setOrderDetailsLoadingStatus(LoadingStatus.LOADING));
+    const res = await axios.get<Order[]>(`http://localhost:3001/orders/?clientId=${clientId}${orderId}`);
+    dispatch(setOrderDetails(res.data[0]));
+    dispatch(setOrderDetailsLoadingStatus(LoadingStatus.SUCCESS));
+  }());
+};

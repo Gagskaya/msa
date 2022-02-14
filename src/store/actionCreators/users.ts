@@ -1,9 +1,9 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 
-import axios from "axios";
+import axios from 'axios';
 
-import { User } from "../../types/user";
-import { UsersActions, UsersActionsTypes } from "../actionTypes/users";
+import { User } from '../../types/user';
+import { UsersActions, UsersActionsTypes } from '../actionTypes/users';
 
 export const fetchUsers = () => (dispatch: Dispatch) => {
     (async function () {
